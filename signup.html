@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap-5.2.2-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./signup.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+    <div class=" container2 col-12 mx-auto text-center w-75 shadow-lg p-5 mt-5">
+    <img src="./square logo.png" alt="" class="picture1"> <br> <br>
+    <h1 class="text1"><b>Kindly create an Account if you a new user!!!</b></h1>
+      <input class="mt-2 form-control" type="text" placeholder="Last Name" id="lName">
+      <input class="mt-2 form-control" type="text" placeholder="First Name" id="fName">
+      <input class="mt-2 form-control" type="text" placeholder="Email" id="email">
+      <input class="mt-2 form-control" type="text" placeholder="Phone Number" id="phoneNumber">
+      <input class="mt-2 form-control" type="password" placeholder="Create Password" id="password">
+      <input class="mt-2 form-control" type="password" placeholder="Confirm Password" id="cmPassword">
+      <button class=" w-100 mt-2" onclick="signUp()">Create an Account</button>
+      <p>By cliking the signup button you agree to our <a href="#">Terms and Condition</a> and <a href="#">Policy Privacy.</a></p>
+     <a href="./Signin.html" class=""><input type="checkbox">  <b> KINDLY LOGIN IF YOU ARE AN EXISTING USER</b>
+     </div></a>
+        </div>
+    </div>
+
+
+    <script>
+        function signUp(){
+            var allarray = []
+            if (localStorage.information){
+                var alldata = JSON.parse(localStorage.getItem('information'))
+                allarray = alldata
+            }
+           if (lName.value =="" || fName.value =="" || email.value =="" || phoneNumber.value == "" || password.value == "" || cmPassword == ""){
+            alert ("Fill in the blank box correctly")
+           }
+           else{
+            var userDetails = {
+                firstname: lName.value,
+                Lastname: fName.value,
+                Email: email.value,
+                PhoneNumber: phoneNumber.value,
+                CreatePassword: password.value,
+                ConfirmPassword: cmPassword.value,
+                accountNo:Number(phoneNumber.value),
+                balance:500
+            }
+            console.log(userDetails)
+            allarray.push(userDetails)
+            localStorage.setItem('information', JSON.stringify (allarray))
+
+            window.location.href = "Signin.html"
+           }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./bootstrap-5.2.2-dist/css/bootstrap.css">
+  <link rel="stylesheet" href="./login.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class=" container2 col-12 mx-auto text-center w-75 shadow-lg p-5 mt-5">
+        <img src="./square logo.png" alt="" class="picture1"> <br> <br>
+        <h1 class="text1"><b>LOGIN TO ACCESS YOUR ACCOUNT</b></h1>
+        <input class="mt-2 form-control" type="text" placeholder="Email" id="email">
+        <input class="mt-2 form-control" type="password" placeholder="Password" id="password">
+        <button class=" w-100 mt-2" onclick="signIn()">Sign In</button>
+        <p>By cliking the signup button you agree to our <a href="#">Terms and Condition</a> and <a href="#">Policy
+            Privacy.</a></p>
+        <a href="./signup.html" class=""><input type="checkbox"> <b> KINDLY CREATE AN ACCOUNT IF YOU ARE A NEW USER</b>
+      </div></a>
+    </div>
+  </div>
+  </div>
+
+  <script>
+  let userdata=JSON.parse(localStorage.getItem("information"))
+    function signIn() {
+      let found = false
+      if (!email.value || !password.value) {
+        alert("Kindly Input the Necessary Informaation")
+      }
+      else {
+        userdata.map((user, index) => {
+          if (user.Email == email.value && user.CreatePassword == password.value) {
+            console.log(user.accountNo)
+            localStorage.setItem('index',index)
+            found = true
+            console.log(index)
+            localStorage.setItem("index", index)
+          }
+        })
+      }
+      if (found == true) {
+        window.location.href = "dashboard.html"
+      } else if (found == false) {
+        alert("Incorrect details")
+      }
+
+    }
+  </script>
+</body>
+
+</html>

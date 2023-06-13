@@ -1,0 +1,23 @@
+*{
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+button{
+    background-color: purple;
+    border-radius: 10px;
+    border: none;
+    height: 5vh;
+    color: white;
+}
+.text1{
+    font-size: 20px;
+    text-transform: uppercase;
+    color: purple;
+}
+.text1 :hover{
+    color: blue;
+}
+.picture1{
+    height:15vh;
+}

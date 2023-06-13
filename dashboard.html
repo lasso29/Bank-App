@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dashboard.css">
+    <link rel="stylesheet" href="./bootstrap-5.2.2-dist/css/bootstrap.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="py-3 shadow-lg" id="sideBar">
+        <img src="./square logo.png" alt="" class="picture1 image-fluid d-block mx-auto" width="50px">
+        <i class="ri-close-circle-fill text-white close fs-4 position-absolute top-0 end-0 me-3" onclick="closeNav()"></i>
+        <ul>
+            <li><a href=""><i class="ri-home-7-fill me-2"></i>Home</a></li>
+                    <li><a href=""><i class="ri-profile-fill me-2"></i>Profile</a></li>
+                    <li><a href=""><i class="ri-history-line me-2"></i>History</a></li>
+                    <li><a href=""><i class="ri-bank-fill me-2"></i>Finance</a></li>
+                    <li><a href=""><i class="ri-settings-5-line me-2"></i>Settings</a></li>
+                    <li><a href="./update.html"><i class="ri-information-line me-2"></i></i>Update Profile</a></li>
+                    <li><a href=""><i class="ri-bank-card-fill me-2"></i>Card Settings</a></li>
+                    <li><a href=""><i class="ri-chat-history-fill me-2"></i></i>Payment History</a></li>
+                    <li><a href="Signin.html"><i class="ri-logout-box-line me-2"></i>Logout</a></li>
+        </ul>
+    </nav>
+    <div id="main">
+        <div class="shadow-sm py-3 px-2">
+            <i class="ri-menu-line fs-5" id="menu" onclick="nav()"></i>
+        </div>
+            <div class="px-5 py-3">
+                <div class="row">
+                    <div class="col-lg-10 col-12 rounded bg-warning p-2 board me-auto mx-md-0 text-white">
+                        <!-- <a href="#" class="btn btn-primary">Fund Wallet</a> -->
+                        <h3>Welcome <span id="tellName"></span></h3>
+                        <h3>Your Account Number is <span id="accountNumber" style="color: rebeccapurple;"></span></h3>
+                        <h3>Your account balance is <span id="bal" style="color: rebeccapurple;"></span> </h3>
+                    </div>
+                </div>
+                <div class=" box2 row text-white mt-3 mx-auto">
+                    <div class="col-md-2 bg-primary p-4 rounded ms-md-2 mt-3 mt-md-0"><a href="transfer.html" id="transfer"><i class="ri-funds-fill"></i>Transfer Fund</a></div>
+                    <div class="col-md-2 bg-success p-4 rounded ms-md-2 mt-3 mt-md-0"><a href="" id="buyAirtime"><i class="ri-phone-fill"></i>Buy Airtime</a></div>
+                    <div class="col-md-2 bg-danger p-4 rounded ms-md-2 mt-3 mt-md-0"><a href="" id="investment"><i class="ri-exchange-box-fill"></i>Invest</a></div>
+                    <div class="col-md-2 bg-info p-4 rounded ms-md-2 mt-3 mt-md-0"><a href="" id="payBill"><i class="ri-wechat-pay-fill"></i> Pay Bill</a></div>
+                </div>
+            </div>
+    </div>
+    <script>
+        let allInfo =JSON.parse (localStorage.getItem('information'))
+        let index=localStorage.getItem('index')
+        tellName.innerHTML= allInfo[index].firstname+" "+allInfo[index].Lastname
+        accountNumber.innerHTML=allInfo[index].accountNo
+        bal.innerHTML="₦"+allInfo[index].balance+".00 (Bonus)"
+
+        function disp(){
+            bal.innerHTML="₦"+allInfo[index].balance+".00"
+        }
+        console.log(allInfo)
+        function nav (){
+            main.classList.toggle('swipe')
+            sideBar.classList.toggle('show')            
+        }
+
+        function closeNav() {
+            sideBar.classList.remove('show')
+        }
+    </script>
+</body>
+</html>

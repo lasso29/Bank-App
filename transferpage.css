@@ -1,0 +1,39 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.picture1{
+    height:15vh;
+}
+.nextbtn{
+    background-color: purple;
+    width: 100% !important;
+}
+button{
+    background-color: purple;
+    border-radius: 10px;
+    border: none;
+    height: 5vh;
+    color: white;
+}
+
+/* disclaimer  */
+.transfer{
+    color: purple;
+    font-family: century gothic;
+}
+
+.disclaimer{
+    background-color: purple !important;
+    color: white;
+    border-radius: 10px;
+}
+
+.disclaimer-text{
+    text-align: justify;
+}
+.alert{
+    width: 50px !important;
+}

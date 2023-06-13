@@ -1,0 +1,63 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* outline: 2px solid red; */
+}
+
+
+button{
+    width: 12pc;
+    height: 3pc;
+    font-size: 20px !important;
+}
+.picture1{
+    width: 5pc!important;
+}
+.container1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px !important;
+}
+.animate{
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-name: animation;
+    background-image: url(./animate\ \(2\).jpg);
+    background-size: cover;
+    border-radius: 15px;
+}
+@keyframes animation {
+    25%{
+        background-image: url(./animate\ \(1\).jpg);
+        background-size: cover;
+    }
+    50%{
+        background-image: url(./animate\ \(2\).jpg);
+        background-size: cover;
+    }
+    75%{
+        background-image: url(./animate\ \(3\).jpg);
+        background-size: cover;
+    }
+    100%{background-image: url(./animate\ \(4\).jpg);
+        background-size: cover;
+    }
+}
+
+@media (max-width:680px){
+    button{
+        width: 8pc;
+        height: 3pc;
+        font-size: 20px !important;
+    }
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px !important;
+    }
+}
+
